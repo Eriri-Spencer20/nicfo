@@ -8,7 +8,7 @@ include "koneksi.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kepegawaian || Guru</title>
+    <title>Data Kepegawaian || Staff </title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -20,7 +20,6 @@ include "koneksi.php";
         <div class="bg-gray-800 text-gray-100 flex justify-between md:hidden">
             <!-- logo -->
             <a href="" class="block p-4 text-white font-bold">Life is Better</a>
-
             <!-- mobile menu button-->
             <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
