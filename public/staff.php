@@ -32,7 +32,7 @@ include "koneksi.php";
         <div
             class="sidebar bg-gray-300 text-gray-700 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0  transition duration-200 ease-in-out">
             <!-- logo -->
-            <a href="" class="text-indigo-500 flex items-center justify-between px-4">
+            <a href="index.php" class="text-indigo-500 flex items-center justify-between px-4">
                 <span class="text-2xl font-bold uppercase tracking-widest">nicfo</span>
                 <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -62,9 +62,9 @@ include "koneksi.php";
                         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-white focus:text-white hover:bg-indigo-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Data Guru</a>
+                                href="guru.php">Data Guru</a>
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-white focus:text-white hover:bg-indigo-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Data Staff</a>
+                                href="staff.php">Data Staff</a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ include "koneksi.php";
                                 </tr>
                             </thead>
                             <?php
-                            $data = mysqli_query($conn, "select * from data_guru");
+                            $data = mysqli_query($conn, "select * from data_staff");
                             while ($d = mysqli_fetch_array($data)) {
                             ?>
                             <tbody class="bg-white divide-y divide-gray-200">
