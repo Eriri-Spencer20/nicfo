@@ -72,22 +72,22 @@ include "koneksi.php";
                     class="mt-4 block py-2.5 px-4 rounded transition duration-200 hover:bg-indigo-400 hover:text-white text-center">About</a>
             </nav>
         </div>
-        <!-- component -->
-        <div class="flex flex-col w-full p-8 space-x-4">
-            <div class="flex justify-between items-center">
-                <form autocomplete="off">
-                    <input
-                        class="transition mx-6 p-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block"
-                        id="search" name="search" type="text" placeholder="Search Posts" value="">
-                </form>
-                <div>
-                    <a class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition"
-                        href="">
-                        Create User
-                    </a>
-                </div>
-            </div>
 
+        <!-- component -->
+
+        <div class="flex flex-col w-full p-8 space-y-4 ">
+            <div class="flex justify-between items-center">
+                <form action="guru.php" autocomplete="off" method="get">
+                    <input
+                        class="transition  p-2 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block"
+                        id="search" name="search" type="text" placeholder="Search name" value="">
+                </form>
+            </div>
+            <?php 
+if(isset($_GET['search'])){
+	$cari = $_GET['search'];	
+}
+?>
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -116,7 +116,15 @@ include "koneksi.php";
                                 </tr>
                             </thead>
                             <?php
+                            if(isset($_GET['search'])){
+                                $cari = $_GET['search'];
+                                $data = mysqli_query($conn,"select * from data_guru where nama like '%".$cari."%'");
+                            }if(isset($_GET['search'])){
+                                $cari = $_GET['search'];
+                                $data = mysqli_query($conn,"select * from data_guru where jenis_ptk like '%".$cari."%'");
+                            }else{
                             $data = mysqli_query($conn, "select * from data_guru");
+                            }
                             while ($d = mysqli_fetch_array($data)) {
                             ?>
                             <tbody class="bg-white divide-y divide-gray-200">
