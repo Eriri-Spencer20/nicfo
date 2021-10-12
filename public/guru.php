@@ -28,12 +28,13 @@ include "koneksi.php";
                 </svg>
             </button>
         </div>
+
         <!-- side bar -->
         <div
             class="sidebar bg-gray-300 text-gray-700 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0  transition duration-200 ease-in-out">
             <!-- logo -->
-            <a href="index.php" class="text-indigo-500 flex items-center justify-between px-4">
-                <span class="text-2xl font-bold uppercase tracking-widest">nicfo</span>
+            <a href="index.php" class="text-indigo-500 flex items-center justify-between px-5 ">
+                <span class=" text-2xl font-bold uppercase tracking-widest mx-auto">nicfo</span>
                 <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -119,7 +120,7 @@ if(isset($_GET['search'])){
                             if(isset($_GET['search'])){
                                 $cari = $_GET['search'];
                                 $data = mysqli_query($conn,"select * from data_guru where nama like '%".$cari."%'");
-                            }if(isset($_GET['search'])){
+                            }else if(isset($_GET['search'])){
                                 $cari = $_GET['search'];
                                 $data = mysqli_query($conn,"select * from data_guru where jenis_ptk like '%".$cari."%'");
                             }else{
